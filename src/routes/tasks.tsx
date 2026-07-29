@@ -14,7 +14,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const priorityRank = { urgent: 0, high: 1, medium: 2, low: 3 };
 
-export function meta() { return [{ title: "Team tasks · Zen" }]; }
+export function meta() { return [{ title: "Team tasks · Zypp" }]; }
 
 export default function TasksRoute() {
   const team = useQuery(api.teams.current);

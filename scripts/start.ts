@@ -10,7 +10,7 @@ const childEnvironment = {
   PATH: `${dirname(bunExecutable)}${delimiter}${process.env.PATH ?? ""}`,
 };
 
-console.log(`Starting Zen App from ${projectDirectory}`);
+console.log(`Starting Zypp from ${projectDirectory}`);
 
 const install = Bun.spawnSync([bunExecutable, "install"], {
   cwd: projectDirectory,

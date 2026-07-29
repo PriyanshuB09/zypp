@@ -21,7 +21,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 
-export function meta() { return [{ title: "Team · Zen" }]; }
+export function meta() { return [{ title: "Team · Zypp" }]; }
 
 export default function TeamRoute() {
   const team = useQuery(api.teams.current);

@@ -58,7 +58,7 @@ const taskInput = {
   deadline: Date.UTC(2030, 0, 15, 23, 59, 59, 999),
 };
 
-describe("Zen authorization and team workflow", () => {
+describe("Zypp authorization and team workflow", () => {
   let t: TestClient;
 
   beforeEach(() => {

@@ -6,7 +6,7 @@ import { PageHeader } from "@/components/page-header";
 import { TaskForm } from "@/components/task-form";
 import { Skeleton } from "@/components/ui/skeleton";
 
-export function meta() { return [{ title: "Create task · Zen" }]; }
+export function meta() { return [{ title: "Create task · Zypp" }]; }
 
 export default function TaskNewRoute() {
   const team = useQuery(api.teams.current);

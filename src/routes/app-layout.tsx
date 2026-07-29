@@ -80,7 +80,7 @@ function AuthenticatedShell() {
         <div className="mx-auto flex h-16 max-w-6xl items-center gap-4 px-4 sm:px-6">
           <NavLink to="/" className="mr-auto flex items-center gap-2.5 font-semibold tracking-tight">
             <span className="relative grid size-8 place-items-center rounded-full border-2 border-primary text-primary"><CircleIcon className="size-3 fill-current" /></span>
-            <span className="text-lg">Zen</span>
+            <span className="text-lg">Zypp</span>
           </NavLink>
 
           {team && (
@@ -142,7 +142,7 @@ function ProfileSetup() {
     const name = String(new FormData(event.currentTarget).get("name") ?? "");
     try {
       await save({ name });
-      toast.success("Welcome to Zen");
+      toast.success("Welcome to Zypp");
     } catch (error) {
       toast.error(error instanceof Error ? error.message : "Could not save your profile.");
     } finally {

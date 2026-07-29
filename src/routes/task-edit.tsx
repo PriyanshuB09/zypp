@@ -7,7 +7,7 @@ import { PageHeader } from "@/components/page-header";
 import { TaskForm } from "@/components/task-form";
 import { Skeleton } from "@/components/ui/skeleton";
 
-export function meta() { return [{ title: "Edit task · Zen" }]; }
+export function meta() { return [{ title: "Edit task · Zypp" }]; }
 
 export default function TaskEditRoute() {
   const { taskId } = useParams();

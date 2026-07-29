@@ -27,7 +27,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Skeleton } from "@/components/ui/skeleton";
 
-export function meta() { return [{ title: "Team admin · Zen" }]; }
+export function meta() { return [{ title: "Team admin · Zypp" }]; }
 
 export default function AdminRoute() {
   const team = useQuery(api.teams.current);

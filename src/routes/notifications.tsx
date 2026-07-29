@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
 
 type PermissionState = NotificationPermission | "unsupported";
 
-export function meta() { return [{ title: "Notifications · Zen" }]; }
+export function meta() { return [{ title: "Notifications · Zypp" }]; }
 
 export default function NotificationsRoute() {
   const notifications = useQuery(api.notifications.list);
@@ -32,7 +32,7 @@ export default function NotificationsRoute() {
     const next = await Notification.requestPermission();
     setPermission(next);
     if (next === "granted") toast.success("Native notifications enabled");
-    else toast.info("Zen will keep showing notifications in the app.");
+    else toast.info("Zypp will keep showing notifications in the app.");
   }
 
   async function changePreference(key: "newTasksEnabled" | "directAssignmentsEnabled" | "deadlineWarningsEnabled" | "overdueWarningsEnabled", checked: boolean) {
@@ -51,7 +51,7 @@ export default function NotificationsRoute() {
       <PageHeader eyebrow="Updates" title="Notifications" description="Control native alerts and review assignment or deadline updates." />
       <div className="mt-8 grid gap-5 lg:grid-cols-[20rem_1fr]">
         <aside className="space-y-5">
-          <Card><CardHeader><CardTitle>Native notifications</CardTitle><CardDescription>Zen uses your browser's notification system, not simulated popups.</CardDescription></CardHeader><CardContent>{permission === "granted" ? <div className="flex items-center gap-2 text-sm text-emerald-600 dark:text-emerald-400"><CheckIcon className="size-4" /> Enabled on this device</div> : permission === "unsupported" ? <p className="text-sm text-muted-foreground">This browser does not support native notifications. The in-app inbox still works.</p> : <><p className="text-sm text-muted-foreground">Permission is {permission}. Zen remains fully usable without it.</p><Button className="mt-4" variant="outline" onClick={() => void requestPermission()}><BellRingIcon data-icon="inline-start" /> {permission === "denied" ? "Check browser settings" : "Enable notifications"}</Button></>}</CardContent></Card>
+          <Card><CardHeader><CardTitle>Native notifications</CardTitle><CardDescription>Zypp uses your browser's notification system, not simulated popups.</CardDescription></CardHeader><CardContent>{permission === "granted" ? <div className="flex items-center gap-2 text-sm text-emerald-600 dark:text-emerald-400"><CheckIcon className="size-4" /> Enabled on this device</div> : permission === "unsupported" ? <p className="text-sm text-muted-foreground">This browser does not support native notifications. The in-app inbox still works.</p> : <><p className="text-sm text-muted-foreground">Permission is {permission}. Zypp remains fully usable without it.</p><Button className="mt-4" variant="outline" onClick={() => void requestPermission()}><BellRingIcon data-icon="inline-start" /> {permission === "denied" ? "Check browser settings" : "Enable notifications"}</Button></>}</CardContent></Card>
           <Card><CardHeader><CardTitle>Preferences</CardTitle><CardDescription>Choose the updates that create notification records and native alerts.</CardDescription></CardHeader><CardContent className="space-y-5">{([
             ["newTasksEnabled", "New team tasks", "New work added by any member"],
             ["directAssignmentsEnabled", "Direct assignments", "Work assigned specifically to you"],

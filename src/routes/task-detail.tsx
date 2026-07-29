@@ -38,7 +38,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Skeleton } from "@/components/ui/skeleton";
 import { formatDeadline } from "@/lib/date";
 
-export function meta() { return [{ title: "Task · Zen" }]; }
+export function meta() { return [{ title: "Task · Zypp" }]; }
 
 export default function TaskDetailRoute() {
   const { taskId } = useParams();

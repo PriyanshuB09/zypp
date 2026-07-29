@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "zen-app",
+      "name": "zypp",
       "dependencies": {
         "@auth/core": "0.41.1",
         "@base-ui/react": "^1.6.0",

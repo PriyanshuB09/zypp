@@ -14,7 +14,7 @@ type AuthFlow = "signIn" | "signUp";
 
 export function meta() {
   return [
-    { title: "Sign in · Zen" },
+    { title: "Sign in · Zypp" },
     { name: "description", content: "Sign in to your robotics team's focused planner." },
   ];
 }
@@ -54,7 +54,7 @@ function AuthForm() {
     <section className="relative w-full max-w-sm rounded-3xl border bg-card/90 p-6 shadow-xl shadow-primary/5 backdrop-blur sm:p-8">
       <div className="flex items-center gap-2.5">
         <span className="relative grid size-9 place-items-center rounded-full border-2 border-primary text-primary"><CircleIcon className="size-3 fill-current" /></span>
-        <span className="text-lg font-semibold">Zen</span>
+        <span className="text-lg font-semibold">Zypp</span>
       </div>
       <h1 className="mt-8 text-3xl font-semibold tracking-[-0.04em]">Plan the work. Build the robot.</h1>
       <p className="mt-3 text-sm leading-6 text-muted-foreground">A calm, shared task space for robotics programming teams.</p>

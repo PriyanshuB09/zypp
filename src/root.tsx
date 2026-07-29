@@ -37,7 +37,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export function HydrateFallback() {
   return (
     <div className="grid min-h-svh place-items-center text-sm text-muted-foreground">
-      Preparing Zen…
+      Preparing Zypp…
     </div>
   );
 }
@@ -73,7 +73,7 @@ function ConvexSetupRequired() {
     <main className="grid min-h-svh place-items-center p-6">
       <section className="w-full max-w-lg rounded-2xl border bg-card p-6 shadow-sm">
         <p className="text-xs font-medium uppercase tracking-[0.18em] text-primary">
-          Zen setup required
+          Zypp setup required
         </p>
         <h1 className="mt-3 text-2xl font-semibold tracking-tight">
           Connect the team planner backend

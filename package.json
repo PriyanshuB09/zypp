@@ -1,10 +1,10 @@
 {
-  "name": "zen-app",
+  "name": "zypp",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "bin": {
-    "zen-app": "./scripts/start.ts"
+    "zypp": "./scripts/start.ts"
   },
   "scripts": {
     "dev": "convex dev --start \"bun run dev:web\"",

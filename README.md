@@ -1,4 +1,4 @@
-# Zen Robotics Team Planner
+# Zypp Robotics Team Planner
 
 A responsive team task planner using Bun, React Router 7 in SPA mode, Vite,
 strict TypeScript, Tailwind CSS v4, shadcn/ui on Base UI, Convex Auth, Zustand,
@@ -10,7 +10,7 @@ team, task, checklist, preference, and notification data.
 The project registers a global Bun command on this machine:
 
 ```powershell
-zen-app
+zypp
 ```
 
 It switches to this project, installs any missing packages, starts Convex, and
@@ -33,7 +33,7 @@ for ephemeral UI state.
 ## Convex
 
 - Team: `CSP (csp4188)`
-- Project: `convex-starter` (existing Convex deployment backing `zen-app`)
+- Project: `convex-starter` (existing Convex deployment backing Zypp)
 - Dashboard: https://dashboard.convex.dev/t/csp4188/convex-starter
 
 Convex Auth uses its password provider. The development deployment includes the

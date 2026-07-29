@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
 
 const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-export function meta() { return [{ title: "Calendar · Zen" }]; }
+export function meta() { return [{ title: "Calendar · Zypp" }]; }
 
 export default function CalendarRoute() {
   const team = useQuery(api.teams.current);
