@@ -33,8 +33,8 @@ for ephemeral UI state.
 ## Convex
 
 - Team: `CSP (csp4188)`
-- Project: `convex-starter` (existing Convex deployment backing Zypp)
-- Dashboard: https://dashboard.convex.dev/t/csp4188/convex-starter
+- Project: `zypp`
+- Dashboard: https://dashboard.convex.dev/t/csp4188/zypp
 
 Convex Auth uses its password provider. The development deployment includes the
 team planner schema, live queries, protected mutations, deadline cron, and
