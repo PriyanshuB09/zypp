@@ -1,0 +1,56 @@
+{
+  "name": "zen-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "bin": {
+    "zen-app": "./scripts/start.ts"
+  },
+  "scripts": {
+    "dev": "convex dev --start \"bun run dev:web\"",
+    "dev:web": "react-router dev",
+    "build": "react-router build",
+    "lint": "oxlint src convex scripts vite.config.ts react-router.config.ts",
+    "preview": "vite preview",
+    "start": "bun run scripts/start.ts",
+    "test": "vitest run",
+    "typecheck": "react-router typegen && tsc -b && tsc -p convex --noEmit"
+  },
+  "dependencies": {
+    "@auth/core": "0.41.1",
+    "@base-ui/react": "^1.6.0",
+    "@convex-dev/auth": "^0.0.94",
+    "@fontsource-variable/geist": "^5.3.0",
+    "@react-router/node": "^7.0.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "convex": "^1.42.3",
+    "isbot": "^5",
+    "lucide-react": "^1.27.0",
+    "next-themes": "^0.4.6",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router": "^7.0.0",
+    "shadcn": "^4.16.0",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.6.0",
+    "tw-animate-css": "^1.4.0",
+    "zustand": "^5.0.14"
+  },
+  "devDependencies": {
+    "@edge-runtime/vm": "^5.0.0",
+    "@react-router/dev": "^7.0.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/bun": "^1.3.14",
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "convex-test": "^0.0.54",
+    "oxlint": "^1.71.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1",
+    "vitest": "^4.1.10"
+  }
+}
