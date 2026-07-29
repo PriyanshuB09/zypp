@@ -26,6 +26,7 @@ import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
@@ -105,11 +106,12 @@ function AuthenticatedShell() {
               <Avatar className="size-8"><AvatarFallback>{initials}</AvatarFallback></Avatar>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-56">
-              <DropdownMenuLabel><span className="block truncate">{profile.name}</span><span className="block truncate font-normal text-muted-foreground">{profile.email}</span></DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem onClick={() => setTheme("light")}><SunIcon /> Light theme</DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setTheme("dark")}><MoonIcon /> Dark theme</DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setTheme("system")}><LaptopIcon /> System theme</DropdownMenuItem>
+              <DropdownMenuGroup>
+                <DropdownMenuLabel><span className="block truncate">{profile.name}</span><span className="block truncate font-normal text-muted-foreground">{profile.email}</span></DropdownMenuLabel>
+                <DropdownMenuItem onClick={() => setTheme("light")}><SunIcon /> Light theme</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("dark")}><MoonIcon /> Dark theme</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("system")}><LaptopIcon /> System theme</DropdownMenuItem>
+              </DropdownMenuGroup>
               <DropdownMenuSeparator />
               <DropdownMenuItem onClick={() => void signOut()}><LogOutIcon /> Sign out</DropdownMenuItem>
             </DropdownMenuContent>
