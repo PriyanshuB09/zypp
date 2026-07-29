@@ -31,6 +31,13 @@ export function TaskForm({ team, task }: { team: CurrentTeam; task?: TaskDetail 
   const allowedMembers = team.isOwner
     ? team.members
     : team.members.filter((member) => member.userId === team.currentUserId);
+  const assigneeOptions = [
+    { value: "unassigned", label: "Unassigned — available to claim" },
+    ...allowedMembers.map((member) => ({
+      value: member.userId,
+      label: `${member.name}${member.userId === team.currentUserId ? " (you)" : ""}`,
+    })),
+  ];
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -100,7 +107,7 @@ export function TaskForm({ team, task }: { team: CurrentTeam; task?: TaskDetail 
       </div>
 
       <aside className="space-y-5 rounded-2xl border bg-card p-5 lg:self-start">
-        <div className="space-y-2"><Label>Assignee</Label><Select value={assignee} onValueChange={(value) => setAssignee(String(value))}><SelectTrigger className="w-full"><SelectValue /></SelectTrigger><SelectContent><SelectItem value="unassigned">Unassigned — available to claim</SelectItem>{allowedMembers.map((member) => <SelectItem key={member.userId} value={member.userId}>{member.name}{member.userId === team.currentUserId ? " (you)" : ""}</SelectItem>)}</SelectContent></Select></div>
+        <div className="space-y-2"><Label>Assignee</Label><Select items={assigneeOptions} value={assignee} onValueChange={(value) => setAssignee(String(value))}><SelectTrigger className="w-full"><SelectValue /></SelectTrigger><SelectContent>{assigneeOptions.map((option) => <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>)}</SelectContent></Select></div>
         <div className="space-y-2"><Label htmlFor="deadline">Deadline</Label><Input id="deadline" name="deadline" type="date" min={new Date().toISOString().slice(0, 10)} defaultValue={task ? deadlineToDateInput(task.deadline) : undefined} required /></div>
         <div className="space-y-2"><Label>Priority</Label><Select value={priority} onValueChange={(value) => setPriority(value as Priority)}><SelectTrigger className="w-full"><SelectValue /></SelectTrigger><SelectContent><SelectItem value="low">Low</SelectItem><SelectItem value="medium">Medium</SelectItem><SelectItem value="high">High</SelectItem><SelectItem value="urgent">Urgent</SelectItem></SelectContent></Select></div>
         <div className="space-y-2"><Label>Estimated effort</Label><Select value={String(effort)} onValueChange={(value) => setEffort(Number(value) as Effort)}><SelectTrigger className="w-full"><SelectValue /></SelectTrigger><SelectContent>{[1, 2, 3, 5, 8].map((value) => <SelectItem key={value} value={String(value)}>{value} {value === 1 ? "point" : "points"}</SelectItem>)}</SelectContent></Select></div>

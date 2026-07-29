@@ -45,13 +45,20 @@ export default function TasksRoute() {
   if (team === undefined || (team && tasks === undefined)) return <TasksLoading />;
   if (!team) return <Navigate to="/" replace />;
 
+  const assigneeOptions = [
+    { value: "all", label: "All assignees" },
+    { value: "mine", label: "Assigned to me" },
+    { value: "unassigned", label: "Unassigned" },
+    ...team.members.map((member) => ({ value: `user:${member.userId}`, label: member.name })),
+  ];
+
   return (
     <main className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 sm:py-12">
       <PageHeader eyebrow={team.name} title="Team tasks" description="Find an assignment, check ownership, or claim available work." actions={<Button render={<Link to="/tasks/new" />}><PlusIcon data-icon="inline-start" /> New task</Button>} />
       <section aria-label="Task filters" className="mt-8 rounded-2xl border bg-card p-3 sm:p-4">
         <div className="relative"><SearchIcon className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" /><Input value={search} onChange={(event) => setSearch(event.target.value)} className="pl-9" placeholder="Search tasks and context" aria-label="Search tasks" /></div>
         <div className="mt-3 flex flex-wrap gap-2">
-          <Select value={assignee} onValueChange={(value) => setAssignee(String(value))}><SelectTrigger><ListFilterIcon /><SelectValue /></SelectTrigger><SelectContent><SelectItem value="all">All assignees</SelectItem><SelectItem value="mine">Assigned to me</SelectItem><SelectItem value="unassigned">Unassigned</SelectItem>{team.members.map((member) => <SelectItem key={member.userId} value={`user:${member.userId}`}>{member.name}</SelectItem>)}</SelectContent></Select>
+          <Select items={assigneeOptions} value={assignee} onValueChange={(value) => setAssignee(String(value))}><SelectTrigger><ListFilterIcon /><SelectValue /></SelectTrigger><SelectContent>{assigneeOptions.map((option) => <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>)}</SelectContent></Select>
           <Select value={status} onValueChange={(value) => setStatus(String(value))}><SelectTrigger><SelectValue /></SelectTrigger><SelectContent><SelectItem value="active">Active</SelectItem><SelectItem value="all">All statuses</SelectItem><SelectItem value="open">Open</SelectItem><SelectItem value="in_progress">In progress</SelectItem><SelectItem value="completed">Completed</SelectItem></SelectContent></Select>
           <Select value={priority} onValueChange={(value) => setPriority(String(value))}><SelectTrigger><SelectValue /></SelectTrigger><SelectContent><SelectItem value="all">All priorities</SelectItem><SelectItem value="urgent">Urgent</SelectItem><SelectItem value="high">High</SelectItem><SelectItem value="medium">Medium</SelectItem><SelectItem value="low">Low</SelectItem></SelectContent></Select>
           <Select value={subsystem} onValueChange={(value) => setSubsystem(String(value))}><SelectTrigger><SelectValue /></SelectTrigger><SelectContent><SelectItem value="all">All subsystems</SelectItem>{subsystems.map((name) => <SelectItem key={name} value={name!}>{name}</SelectItem>)}</SelectContent></Select>
