@@ -15,7 +15,6 @@ dist
 dist-ssr
 *.local
 .env.local
-convex/_generated
 .convex-login.*
 
 # Editor directories and files
