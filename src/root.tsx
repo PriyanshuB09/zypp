@@ -22,6 +22,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/png" href="/zypp-logo-circle.png" />
+        <link rel="apple-touch-icon" href="/zypp-logo-circle.png" />
         <Meta />
         <Links />
       </head>
