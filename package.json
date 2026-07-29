@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "convex dev --start \"bun run dev:web\"",
     "dev:web": "react-router dev",
-    "build": "react-router build",
+    "build": "convex codegen && react-router build",
     "lint": "oxlint src convex scripts vite.config.ts react-router.config.ts",
     "preview": "vite preview",
     "start": "bun run scripts/start.ts",
