@@ -4,7 +4,6 @@ import {
   BellIcon,
   CalendarDaysIcon,
   CheckSquare2Icon,
-  CircleIcon,
   HomeIcon,
   LaptopIcon,
   LogOutIcon,
@@ -20,6 +19,7 @@ import { NavLink, Navigate, Outlet } from "react-router";
 import { toast } from "sonner";
 
 import { api } from "../../convex/_generated/api";
+import { BrandMark } from "@/components/brand-mark";
 import { NotificationBridge } from "@/components/notification-bridge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -79,7 +79,7 @@ function AuthenticatedShell() {
       <header className="sticky top-0 z-40 border-b bg-background/88 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-6xl items-center gap-4 px-4 sm:px-6">
           <NavLink to="/" className="mr-auto flex items-center gap-2.5 font-semibold tracking-tight">
-            <span className="relative grid size-8 place-items-center rounded-full border-2 border-primary text-primary"><CircleIcon className="size-3 fill-current" /></span>
+            <BrandMark />
             <span className="text-lg">Zypp</span>
           </NavLink>
 
@@ -152,7 +152,7 @@ function ProfileSetup() {
   return (
     <main className="grid min-h-svh place-items-center p-4">
       <form onSubmit={handleSubmit} className="w-full max-w-sm rounded-3xl border bg-card p-6 shadow-sm">
-        <span className="relative grid size-10 place-items-center rounded-full border-2 border-primary text-primary"><CircleIcon className="size-3 fill-current" /></span>
+        <BrandMark className="size-10" />
         <h1 className="mt-5 text-2xl font-semibold tracking-tight">What should your team call you?</h1>
         <p className="mt-2 text-sm leading-6 text-muted-foreground">Your name appears on assignments and team membership.</p>
         <div className="mt-6 space-y-2"><Label htmlFor="name">Display name</Label><Input id="name" name="name" autoComplete="name" maxLength={80} required autoFocus /></div>

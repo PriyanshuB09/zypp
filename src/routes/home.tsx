@@ -1,10 +1,11 @@
 import { useMutation, useQuery } from "convex/react";
-import { ArrowRightIcon, CheckSquare2Icon, CircleIcon, PlusIcon, UserRoundPlusIcon } from "lucide-react";
+import { ArrowRightIcon, CheckSquare2Icon, PlusIcon, UserRoundPlusIcon } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router";
 import { toast } from "sonner";
 
 import { api } from "../../convex/_generated/api";
+import { BrandMark } from "@/components/brand-mark";
 import { EmptyState } from "@/components/empty-state";
 import { PageHeader } from "@/components/page-header";
 import { TaskCard } from "@/components/task-card";
@@ -91,7 +92,7 @@ function TeamOnboarding() {
   return (
     <main className="mx-auto grid min-h-[calc(100svh-4rem)] w-full max-w-4xl place-items-center px-4 py-12 sm:px-6">
       <section className="w-full">
-        <div className="mx-auto max-w-xl text-center"><span className="mx-auto grid size-12 place-items-center rounded-full border-2 border-primary text-primary"><CircleIcon className="size-4 fill-current" /></span><h1 className="mt-5 text-3xl font-semibold tracking-[-0.04em]">Bring your robotics team into Zypp</h1><p className="mt-3 text-sm leading-6 text-muted-foreground">Create a new team space or join one with an invite code.</p></div>
+        <div className="mx-auto max-w-xl text-center"><BrandMark className="mx-auto size-12" /><h1 className="mt-5 text-3xl font-semibold tracking-[-0.04em]">Bring your robotics team into Zypp</h1><p className="mt-3 text-sm leading-6 text-muted-foreground">Create a new team space or join one with an invite code.</p></div>
         <Tabs defaultValue="create" className="mx-auto mt-8 max-w-md">
           <TabsList className="grid w-full grid-cols-2"><TabsTrigger value="create">Create a team</TabsTrigger><TabsTrigger value="join">Join a team</TabsTrigger></TabsList>
           <TabsContent value="create"><Card><CardHeader><CardTitle>Start a team</CardTitle><CardDescription>You become the owner and can invite members.</CardDescription></CardHeader><CardContent><form onSubmit={(event) => void submit(event, "create")} className="space-y-4"><div className="space-y-2"><Label htmlFor="teamName">Team name</Label><Input id="teamName" name="teamName" placeholder="Circuit Breakers" maxLength={100} required /></div><Button type="submit" className="w-full" disabled={pending}>Create team</Button></form></CardContent></Card></TabsContent>

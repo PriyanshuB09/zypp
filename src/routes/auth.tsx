@@ -1,11 +1,12 @@
 import { useAuthActions } from "@convex-dev/auth/react";
 import { Authenticated, AuthLoading, Unauthenticated } from "convex/react";
-import { CircleIcon, LoaderCircleIcon } from "lucide-react";
+import { LoaderCircleIcon } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { Navigate } from "react-router";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
+import { BrandMark } from "@/components/brand-mark";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -53,7 +54,7 @@ function AuthForm() {
   return (
     <section className="relative w-full max-w-sm rounded-3xl border bg-card/90 p-6 shadow-xl shadow-primary/5 backdrop-blur sm:p-8">
       <div className="flex items-center gap-2.5">
-        <span className="relative grid size-9 place-items-center rounded-full border-2 border-primary text-primary"><CircleIcon className="size-3 fill-current" /></span>
+        <BrandMark className="size-9" />
         <span className="text-lg font-semibold">Zypp</span>
       </div>
       <h1 className="mt-8 text-3xl font-semibold tracking-[-0.04em]">Plan the work. Build the robot.</h1>
